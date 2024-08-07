@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/SkyDiffusion.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/SkyDiffusion.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>SkyDiffusion</title>
+  <link rel="icon" type="image/x-icon" href="static/images/SkyDiffusion.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><img id="painting_icon1" width="8%" src="static/images/SkyDiffusion.png" style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px;"> <span class="highlight">SkyDiffusion</span> </h1>
+            <h1 class="title is-2 publication-title">
+              <!-- <b>SkyDiffusion:</b> -->
+              Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://yejy53.github.io/" target="_blank">Junyan Ye</a><sup>1,2</sup>,</span>
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">Jun He</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://liweijia.github.io/" target="_blank">Weijia Li</a><sup>1<math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Zhutao Lv</a><sup>1</sup>,</span>
+              </span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="" target="_blank">Jinhua Yu</a><sup>1</sup>,</span>
+                </span>
+                <span class="author-block">
+                  <a href="" target="_blank">Haote Yang</a><sup>2</sup>,</span>
+                </span>
+                <span class="author-block">
+                  <a href="https://conghui.github.io/" target="_blank">Conghui He</a><sup>2,3 <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup></span>
+                </span>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Sun Yat-Sen University </span>
+              <span class="author-block"><sup>2</sup>Shanghai AI Laboratory </span>
+              <span class="author-block"><sup>3</sup>SenseTime Research</span>
+            </div>
+
+              <h4><sup><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup>Correspondence<sup></h4>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://opendatalab.github.io/skydiffusion/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2408.01812" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+          <img src="./static/images/fig1_crossview_3.jpg"
+              class="interpolation-image"
+              alt="Interpolate start reference image."
+              width="200%"/>
+          <figcaption style="font-size: 14px;text-align: center;">Illustration of the cross-view image synthesis task</figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Street-to-satellite image synthesis focuses on generating realistic satellite images
+            from corresponding ground street-view images while maintaining a consistent
+            content layout, similar to looking down from the sky. The significant differences
+            in perspectives create a substantial domain gap between the views, making this
+            cross-view generation task particularly challenging. In this paper, we introduce
+            SkyDiffusion, a novel cross-view generation method for synthesizing satellite
+            images from street-view images, leveraging diffusion models and Bird’s Eye View
+            (BEV) paradigm. First, we design a Curved-BEV method to transform streetview images to the satellite view, reformulating the challenging cross-domain
+            image synthesis task into a conditional generation problem. Curved-BEV also
+            includes a "Multi-to-One" mapping strategy for combining multiple street-view
+            images within the same satellite coverage area, effectively solving the occlusion
+            issues in dense urban scenes. Next, we design a BEV-controlled diffusion model
+            to generate satellite images consistent with the street-view content, which also
+            incorporates a light manipulation module to optimize the lighting condition of the
+            synthesized image using a reference satellite. Experimental results demonstrate
+            that SkyDiffusion outperforms state-of-the-art methods on both suburban (CVUSA
+            & CVACT) and urban (VIGOR-Chicago) cross-view datasets, with an average
+            SSIM increase of 14.5% and a FID reduction of 29.6%, achieving realistic and
+            content-consistent satellite image generation. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          
+        <div class="column is-centered has-text-centered">
+          <img src="./static/images/fig2_overview_2.jpg"
+                class="interpolation-image"
+                alt="Interpolate start reference image."
+                width="150%"/>
+                <figcaption style="font-size: 14px;text-align: center;">Framework of SkyDiffusion</figcaption>
+        </div>
+
+
+        <p style="font-size: 20px;">
+          Overview of <b>SkyDiffusion</b>. This paper introduces a novel method for synthesizing satellite images
+          from corresponding street-view images. Our cross-view synthesis network, SkyDiffusion, initially
+          applies a curved BEV transformation to the input street-view images, converting the perspective to a
+          top-down view using either one-to-one or multi-to-one mappings. Subsequently, the
+          BEV-Controlled diffusion model with light manipulation is employed for the controlled synthesis of
+          satellite images.
+        </p>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- End method -->
+
+
+<!-- Street-to-Satellite -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Street-to-Satellite</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel (Comparison with SOTA)-->
+<section class="hero is-small is-light">
+  <div class="hero-body ">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+      <h3>Comparison with SOTA</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-image1">
+          <img src="./static/images/CVUSA_results.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."
+                width="150%"
+                id="image1"/>
+                <figcaption style="font-size: 20px;text-align: center;"><b>CVUSA</b></figcaption>
+        </div>
+        <div class="item item-image2">
+          <img src="./static/images/CVACT_results.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."
+                width="150%"
+                id="image2"/>
+                <figcaption style="font-size: 20px;text-align: center;"><b>CVACT</b></figcaption>
+        </div>
+        <div class="item item-image3">
+          <img src="./static/images/VIGOR_results.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."
+                width="150%"
+                id="image3"/>
+                <figcaption style="font-size: 20px;text-align: center;"><b>VIGOR-Chicago</b></figcaption>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<!-- End Image carousel (Comparison with SOTA)-->
+
+<!-- Image carousel (Ablation Study)-->
+<section class="hero is-small is-light">
+  <div class="hero-body ">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+      <h3>Ablation Study</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-image1">
+          <img src="./static/images/Curved-BEV.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."
+                width="150%"
+                id="image1"/>
+                <figcaption style="font-size: 20px;text-align: center;"><b>Curved-BEV controlled synthesis</b></figcaption>
+        </div>
+        <div class="item item-image2">
+          <img src="./static/images/Light.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."
+                width="150%"
+                id="image2"/>
+                <figcaption style="font-size: 20px;text-align: center;"><b>Light manipulation</b></figcaption>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<!-- End Image carousel (Ablation Study)-->
+<!-- End Street-to-Satellite -->
+
+<!-- Evaluation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Evaluation</h2>
+        <div class="content has-text-justified">
+          <!-- index evaluation-->
+          <h3>Quantitative Evaluation</h3>
+          <p style="font-size: 20px;">
+            We present a quantitative comparison of different methods on the CVUSA, CVACT and OmniCity datasets, 
+            evaluating them in terms of various metrics. Compared to the state-of-the-art method for cross-view synthesis (Sat2Density), 
+            our method achieved significant improvements in SSIM and FID scores by <b>9.44%</b> and <b>42.70%</b>
+            on CVUSA, respectively. Similarly, enhancements of <b>6.46%</b> and <b>10.94%</b> in SSIM and
+            FIDwere observed on CVACT. Our method achieved significant improvements in
+            SSIM and FID by <b>11.71%</b> and <b>52.21%</b> on OmniCity, respectively.
+          </p>
+
+         <div class="column is-centered has-text-centered">
+           <img src="./static/images/QuantitativeCom_3datasets.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+                 <figcaption style="font-size: 14px;text-align: center;">Quantitative comparison of different methods on CVUSA, CVACT, and VIGOR-Chicago</figcaption>
+         </div>
+          <!-- End index evaluation-->
+
+          <!-- Ablation study evaluation-->
+          <p style="font-size: 20px;">
+            "Street" represents directly using street-view
+            image inputs, "Curved-BEV" denotes using Curved-BEV transformation, and "Light" stands for the
+            Light Manipulation module.            
+          </p>
+
+         <div class="column is-centered has-text-centered">
+           <img src="./static/images/Ablation_CVACT.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+                 <figcaption style="font-size: 14px;text-align: center;">Ablation study of different modules on CVACT</figcaption>
+         </div>
+
+          <!-- End Ablation study evaluation-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- End evaluation -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{ye2024skydiffusionstreettosatelliteimagesynthesis,
+        title={SkyDiffusion: Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm}, 
+        author={Junyan Ye and Jun He and Weijia Li and Zhutao Lv and Jinhua Yu and Haote Yang and Conghui He},
+        year={2024},
+        eprint={2408.01812},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2408.01812}, 
+  }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
