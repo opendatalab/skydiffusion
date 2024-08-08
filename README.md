@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="./imgs/SkyDiffusion.png" alt="" height=75>
+	<img src="./static/images/SkyDiffusion.png" alt="" height=75>
 	<h1>Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm</h1>
 	<a href="https://arxiv.org/abs/2408.01812"><img src='https://img.shields.io/badge/arXiv-2408.01812-red?logo=arXiv' alt='arXiv'></a>
 	<a href="https://longhz140516.github.io/SkyDiffusion.github.io/"><img src='https://img.shields.io/badge/Project-SkyDiffusion-green' alt='Project'></a>
