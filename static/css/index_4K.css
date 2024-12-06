@@ -1,4 +1,3 @@
-/* 基本样式 */
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -7,11 +6,22 @@ span.highlight {
   font-size: 2em;
   margin-left: 1%;
   background-color: #ffffff;
+  /* background: -webkit-linear-gradient(#14bdfa, #b7eaff); */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px #ffffffc0,
-               0 0 10px rgb(41, 177, 255); 
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px #ffffffc0,
+                 0 0 10px rgb(41, 177, 255); 
 }
+
+/* #painting_icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin-top: 1%;
+  width: 20%; 
+  opacity: 0.6;
+} */
 
 #title-full {
   font-size: 6em;
@@ -26,18 +36,19 @@ span.highlight {
 }
 
 .footer .icon-link {
-  font-size: 25px;
-  color: #000;
+    font-size: 25px;
+    color: #000;
 }
 
 .link-block a {
-  margin-top: 5px;
-  margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .dnerf {
   font-variant: small-caps;
 }
+
 
 .teaser .hero-body {
   padding-top: 0;
@@ -50,6 +61,7 @@ span.highlight {
 
 .publication-banner {
   max-height: parent;
+
 }
 
 .publication-banner video {
@@ -61,37 +73,54 @@ span.highlight {
 }
 
 .publication-title {
-  font-family: 'Google Sans', sans-serif;
-  text-align: left;
-  margin-left: 2%;
+    font-family: 'Google Sans', sans-serif;
+    text-align: left;
+    margin-left: 2%;
 }
 
 .publication-authors {
-  font-family: 'Google Sans', sans-serif;
-  text-align: left;
-  margin-left: 2%;
+    font-family: 'Google Sans', sans-serif;
+    text-align: left;
+    margin-left: 2%;
 }
 
 .publication-venue {
-  color: #555;
-  width: fit-content;
-  font-weight: bold;
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
 }
 
 .publication-awards {
-  color: #ff3860;
-  width: fit-content;
-  font-weight: bolder;
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
 }
 
 .publication-authors a {
-  color: hsl(0, 0%, 0%) !important;
+   color: hsl(0, 0%, 0%) !important;
 }
 
 .publication-authors a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
+/* .special-authors {
+  position: relative;
+}
+
+.special-authors::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -60px;
+  width: calc(100% + 20px);
+  height: 130px;
+  background: white;
+  clip-path: polygon(0 0, 29% 0, 28% 100%, 0 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+} */
+/* test start */
 .publication-authors-container {
   display: flex;
   align-items: center;
@@ -157,6 +186,7 @@ span.highlight {
   font-style: italic;
 }
 
+/* 底部梯形 */
 .special-authors::before {
   content: '';
   position: absolute;
@@ -183,25 +213,28 @@ span.highlight {
   z-index: -1;
 }
 
+/* test end */
 .author-block {
   display: inline-block;
 }
 
+
 .publication-video {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  overflow: hidden;
-  border-radius: 10px !important;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
 }
 
 .publication-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .results-carousel {
@@ -227,87 +260,5 @@ span.highlight {
   font-size: smaller;
 }
 
-/* 适配4K和2K分辨率的媒体查询 */
-/* @media (max-width: 3840px) {
-  .publication-title {
-    font-size: 5em;
-  }
 
-  .author-block {
-    font-size: 1.5em;
-  }
 
-  .institution-block {
-    font-size: 1.5em;
-  }
-
-  .divider {
-    height: 60%;
-    left: 20%;
-  }
-
-  .special-authors::before {
-    height: 150px;
-  }
-
-  .special-authors-second::before {
-    height: 150px;
-  }
-} */
-
-@media (max-width: 2560px) {
-  .publication-title {
-    font-size: 4em;
-  }
-
-  #title-full {
-    font-size: 6em;
-  }
-
-  .author-block {
-    font-size: 1em;
-  }
-
-  .institutions {
-    transform: translateX(-880%);
-  }
-  .institution-block {
-    font-size: 1em;
-  }
-
-  .divider {
-    width: 3.5px;
-    height: 70%;
-    top: 15%;
-    left: 19%;
-    transform: translateX(-35%) rotate(20deg);
-  }
-  .special-authors::before {
-    top: 11px;
-    left: -60px;
-    width: calc(100% + 20px);
-    height: 130px;
-    background: rgb(255, 255, 255);
-    clip-path: polygon(0 0, 33% 0, 31% 100%, 0 100%);
-    box-shadow: 0 4px 8px rgba(137, 251, 255, 0.2);
-    z-index: 0;
-  }
-  .special-authors-second::before {
-    content: '';
-    position: absolute;
-    top: -115px;
-    left: -54px;
-    width: calc(100% + 20px);
-    height: 130px;
-    clip-path: polygon(0 0, 33% 0, 31% 100%, 0 100%);
-    box-shadow: 0 4px 8px rgba(137, 251, 255, 0.2);
-    z-index: -1;
-  }
-  .special-authors::before {
-    height: 120px;
-  }
-
-  .special-authors-second::before {
-    height: 120px;
-  }
-}
