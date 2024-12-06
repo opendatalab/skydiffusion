@@ -1,0 +1,318 @@
+#first-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 95%;
+    z-index: -1;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.7;
+    transform: translateX(-50%);
+    filter: brightness(0.3)
+}
+
+.video-caption-rightbottom {
+    position: absolute;
+    bottom: 15%;
+    right: 2%;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px;
+    font-size: 0.8rem;
+    max-width: 20%;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.video-caption-middle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 垂直居中 */
+    width: 40%;
+    margin-top: 30px;
+}
+
+.video-middle-h2 {
+    margin-bottom: 40px;
+}
+
+.video-middle-content {
+    display: flex;
+    flex-direction: row;
+    /* 横向排列 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+.video-middle-icon {
+    margin-right: 5px;
+    width: 5%;
+}
+
+.video-middle-text {
+    align-items: center;
+    line-height: 1.5;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+}
+
+.video-middle-text span {
+    font-weight: bold;
+    color: #ec6c68ce;
+    font-size: 30px;
+}
+
+.huggingface-span {
+    margin-left: 10px;
+    display: inline-flex;
+    /* 保持行内显示 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    justify-content: center;
+}
+
+.huggingface-span {
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    justify-content: center;
+    vertical-align: middle;
+    /* 确保与周围文字对齐 */
+}
+
+.huggingface-span a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0 8px;
+    line-height: 1.5;
+    vertical-align: middle;
+    /* 与文字对齐 */
+}
+
+.huggingface-text {
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+    /* 保持文字块状，避免引起布局问题 */
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.huggingface-text:hover {
+    color: wheat;
+}
+
+
+#video-div {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.video-controls {
+    position: absolute;
+    right: 5%;
+    bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.control-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.control-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 轮播容器 */
+.video-thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    width: 240px;
+    /* 控制显示容器的宽度 */
+    height: 100px;
+    /* 控制显示容器的高度 */
+    position: relative;
+    gap: 20px;
+}
+
+/* 单个缩略图 */
+.thumbnail-item {
+    flex: 0 0 50%;
+    /* 保证每个缩略图占三分之一的宽度 */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail-video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* 突出显示的缩略图 */
+.thumbnail-item.active {
+    transform: scale(1.1);
+    /* 突出显示的缩略图放大 */
+    opacity: 1;
+    /* 透明度为 1 */
+    z-index: 1;
+    /* 确保其在上层 */
+}
+
+/* 淡化的缩略图 */
+.thumbnail-item.inactive {
+    transform: scale(0.9);
+    /* 缩小 */
+    opacity: 0.5;
+    /* 透明度降低 */
+}
+
+.thumbnail-item.active .thumbnail-video {
+    border: 3px solid #fff;
+    /* 边框突出 */
+}
+
+/* 让图片在鼠标悬停时放大 */
+.video-thumbnails:hover .thumbnail-item {
+    transform: scale(1.05);
+}
+
+
+
+/* 基本布局 */
+#Tabdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.tab-row {
+    display: flex;
+    background-color: #d8dee4;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 4px;
+    position: relative;
+    width: 600px;
+    justify-content: space-evenly;
+}
+
+.tab-item {
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+.tab-item.active {
+    color: #1e76da;
+    font-weight: bold;
+}
+
+.tab-item:not(.active) {
+    color: white;
+}
+
+.tab-indicator {
+    position: absolute;
+    height: 4px;
+    background-color: white;
+    transition: left 0.3s ease, width 0.3s ease;
+    border-radius: 50px;
+}
+
+/* 图片容器样式，确保图片居中显示 */
+.images-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    gap: 20px;
+}
+
+/* 图片样式 */
+.dataset-pdf {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 导航按钮样式 */
+.nav-btn {
+    background-color: white;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+    /* 悬停时背景稍微变暗 */
+}
+
+
+/* 图片指示器容器样式 */
+.img-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* 单个指示器白点样式 */
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* 选中状态的白点样式 */
+.indicator-dot.active {
+    width: 12px;
+    height: 12px;
+    background-color: #333;
+}
