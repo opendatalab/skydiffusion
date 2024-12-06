@@ -29,6 +29,7 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
+  <link rel="stylesheet" href="static/css/background-video.css">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -38,6 +39,9 @@
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
@@ -47,123 +51,159 @@
 <body>
 
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title"><img id="painting_icon1" width="8%" src="static/images/SkyDiffusion.png" style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px;"> <span class="highlight">SkyDiffusion</span> </h1>
-            <h1 class="title is-2 publication-title">
-              <!-- <b>SkyDiffusion:</b> -->
-              Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://yejy53.github.io/" target="_blank">Junyan Ye</a><sup>1,2</sup>,</span>
-              </span>
-              <span class="author-block">
-                <a href="" target="_blank">Jun He</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://liweijia.github.io/" target="_blank">Weijia Li</a><sup>1<math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup>,</span>
-              <span class="author-block">
-                <a href="" target="_blank">Zhutao Lv</a><sup>1</sup>,</span>
-              </span>
-              </div>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="" target="_blank">Jinhua Yu</a><sup>1</sup>,</span>
-                </span>
-                <span class="author-block">
-                  <a href="" target="_blank">Haote Yang</a><sup>2</sup>,</span>
-                </span>
-                <span class="author-block">
-                  <a href="https://conghui.github.io/" target="_blank">Conghui He</a><sup>2,3 <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup></span>
-                </span>
-              </span>
-            </div>
+<section class="hero" id="first-section">
+  <div  id="video-div" style="height: 100%; width: 100%; position: relative;">
+    <!-- 背景视频 -->
+    <video id="background-video" autoplay muted loop class="background-video">
+      <source src="/static/videos/1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Sun Yat-Sen University </span>
-              <span class="author-block"><sup>2</sup>Shanghai AI Laboratory </span>
-              <span class="author-block"><sup>3</sup>SenseTime Research</span>
-            </div>
+    <h1 class="title is-1 publication-title" style="margin-top: 80px;">
+      <img id="painting_icon1" width="8%" src="static/icons/skydiffusion.png"
+        style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px;">
+      <span class="highlight">SkyDiffusion</span>
+    </h1>
+    <h1 class="title is-2 publication-title" style="color: #3eb7c0;" >Ground-to-Aerial Image Synthesis with Diffusion Models and BEV Paradigm</h1>
 
-              <h4><sup><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup>Correspondence<sup></h4>
+    <div class="is-size-5 publication-authors">
+      <!-- Paper authors -->
+      <span class="author-block">
+        <a href="https://yejy53.github.io/" target="_blank">Junyan Ye</a><sup>1,2</sup>,</span>
+      </span>
+      <span class="author-block">
+        <a href="" target="_blank">Jun He</a><sup>1</sup>,</span>
+      <span class="author-block">
+        <a href="https://liweijia.github.io/" target="_blank">Weijia Li</a><sup>1<math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup>,</span>
+      <span class="author-block">
+        <a href="" target="_blank">Zhutao Lv</a><sup>1</sup>,</span>
+      </span>
+      </div>
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">
+          <a href="" target="_blank">Jinhua Yu</a><sup>1</sup>,</span>
+        </span>
+        <span class="author-block">
+          <a href="" target="_blank">Haote Yang</a><sup>2</sup>,</span>
+        </span>
+        <span class="author-block">
+          <a href="https://conghui.github.io/" target="_blank">Conghui He</a><sup>2,3 <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>†</mo></math></sup></span>
+        </span>
+      </span>
+    </div>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/opendatalab/skydiffusion/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+    <div class="is-size-5 publication-authors">
+      <span class="author-block"><sup>1</sup>Sun Yat-Sen University </span>
+      <span class="author-block"><sup>2</sup>Shanghai AI Laboratory </span>
+      <span class="author-block"><sup>3</sup>SenseTime Research</span>
+    </div>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2408.01812" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-            </div>
+      <!-- 中间描述文字 -->
+      <div class="video-caption-middle">
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <img class="video-middle-icon" src="static/icons/Task.png" style="transform: translateX(12%);">
+            <span class="video-middle-text">
+              <span>Task Description :</span> Ground-to-aerial image synthesis focuses on generating realistic aerial images from corresponding ground street view
+              images while maintaining consistent content layout, simulating a top-down view.
+            </span>
           </div>
-          <img src="./static/images/Fig1_flag.jpg"
-              class="interpolation-image"
-              alt="Interpolate start reference image."
-              width="200%"/>
-          <figcaption style="font-size: 14px;text-align: center;">Illustration of the cross-view image synthesis task</figcaption>
+        </h2>
+
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <img class="video-middle-icon" src="static/icons/Challenge.png">
+            <span class="video-middle-text">
+              <span>Challenge :</span> The significant viewpoint difference
+              leads to domain gaps between views, and dense urban scenes limit the visible range of street views, making this
+              cross-view generation task particularly challenging.
+            </span>
+          </div>
+        </h2>
+
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <img class="video-middle-icon" src="static/icons/Method.png">
+            <span class="video-middle-text">
+              <span>Method :</span> We introduce SkyDiffusion, a novel cross-view generation method for synthesizing aerial images from
+              street view images, utilizing a diffusion model and the Bird’s-Eye View (BEV) paradigm. 
+            </span>
+          </div>
+        </h2>
+
+        <h2 class="video-middle-h2">
+          <div class="video-middle-content">
+            <img class="video-middle-icon" src="static/icons/NewDataset.png">
+            <span class="video-middle-text">
+              <span>New Dataset :</span> We introduce a novel dataset, Ground2Aerial-3, designed for diverse ground-to-aerial
+              image synthesis
+              applications, including disaster scene aerial synthesis, historical high-resolution satellite image synthesis, and
+              low-altitude UAV image synthesis tasks.
+            </span>
+          </div>
+        </h2>
+
+
+      </div>
+
+    
+      <!-- 右下角描述文字 -->
+      <div class="video-caption-rightbottom">
+        The video shows the result of pulling up from the ground street view to the aerial perspective, like a sky-down
+        perspective. The video comes from Google Engine rendering and MatrixCity rendering
+      </div>
+
+    <!-- 左右控制按钮 -->
+    <div class="video-controls">
+      <!-- 上一视频按钮 -->
+      <button id="prev-video" class="control-button">◀</button>
+        <div class="video-thumbnails">
+        <div class="thumbnail-item" id="thumbnail-1">
+          <video class="thumbnail-video" muted loop autoplay>
+            <source src="/static/videos/1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="thumbnail-item" id="thumbnail-2">
+          <video class="thumbnail-video" muted loop autoplay>
+            <source src="/static/videos/2.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
+      <!-- 下一视频按钮 -->
+      <button id="next-video" class="control-button">▶</button>
     </div>
   </div>
 </section>
 
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Street-to-satellite image synthesis focuses on generating realistic satellite images 
-            from corresponding ground street-view images while maintaining a consistent content 
-            layout, similar to looking down from the sky. The significant differences in perspectives 
-            create a substantial domain gap between the views, making this cross-view generation task 
-            particularly challenging. In this paper, we introduce SkyDiffusion, a novel cross-view 
-            generation method for synthesizing satellite images from street-view images, leveraging 
-            diffusion models and Bird's Eye View (BEV) paradigm. First, we design a Curved-BEV method 
-            to transform street-view images to the satellite view, reformulating the challenging 
-            cross-domain image synthesis task into a conditional generation problem. Curved-BEV 
-            also includes a "Multi-to-One" mapping strategy for leveraging multiple street-view 
-            images within the same satellite coverage area, effectively solving the occlusion 
-            issues in dense urban scenes. Next, we design a BEV-controlled diffusion model to 
-            generate satellite images consistent with the street-view content, which also incorporates 
-            a light manipulation module to make the lighting conditions of the synthesized 
-            satellite images more flexible. Experimental results demonstrate that SkyDiffusion 
-            outperforms state-of-the-art methods on both suburban (CVUSA & CVACT) and urban 
-            (VIGOR-Chicago) cross-view datasets, with an average SSIM increase of 13.96% and a 
-            FID reduction of 20.54%, achieving realistic and content-consistent satellite image 
-            generation. The code and models of this work will be released at https://opendatalab.github.io/skydiffusion/
 
-          </p>
-        </div>
-      </div>
+
+<!-- Paper datasets -->
+<section class="section hero">
+  <h2 class="title is-3" style=" margin-left: auto;margin-right: auto;">Ground-to-Aerial Image Synthesis results.</h2>
+  <div id="Tabdiv">
+    <!-- 标签行 -->
+    <div class="tab-row">
+      <div class="tab-item" id="tab-1">CVACT</div>
+      <div class="tab-item" id="tab-2">CVUSA</div>
+      <div class="tab-item" id="tab-3">Vigor</div>
+      <!-- 标签指示器 -->
+      <div class="tab-indicator"></div>
     </div>
   </div>
+  <!-- 显示图片 -->
+  <div id="images-container" class="images-container">
+    <button id="prev-btn" class="nav-btn">◀</button>
+    <canvas id="pdf-canvas" class="dataset-pdf"></canvas>
+    <button id="next-btn" class="nav-btn">▶</button>
+  </div>
+  <div id="img-indicator" class="img-indicator"></div>
 </section>
-<!-- End paper abstract -->
+<!-- End paper datesets -->
 
 
 <!-- Method -->
-<section class="section">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -172,24 +212,16 @@
         <div class="content has-text-justified">
           
         <div class="column is-centered has-text-centered">
-          <img src="./static/images/fig2_pipeline.jpg"
+          <img src="./static/images/Method.jpg"
                 class="interpolation-image"
                 alt="Interpolate start reference image."
                 width="150%"/>
-                <figcaption style="font-size: 14px;text-align: center;">Framework of SkyDiffusion</figcaption>
+                <figcaption style="font-size: 14px; text-align: center; margin-top: 20px;">
+                  <span style="font-weight: bold;">Overview of the proposed SkyDiffusion framework</span>, including the curved BEV
+                  transformation and BEV-controlled diffusion model with light manipulation. The lower parts present the results of
+                  One-to-One and Multi-to-One BEV transformations, respectively.
+                </figcaption>
         </div>
-
-
-        <p style="font-size: 20px;">
-          Overview of <b>SkyDiffusion</b>. This paper introduces a novel method for synthesizing satellite images
-          from corresponding street-view images. Our cross-view synthesis network, SkyDiffusion, initially
-          applies a curved BEV transformation to the input street-view images, converting the perspective to a
-          top-down view using either one-to-one or multi-to-one mappings. Subsequently, the
-          BEV-Controlled diffusion model with light manipulation is employed for the controlled synthesis of
-          satellite images.
-        </p>
-
-
         </div>
       </div>
     </div>
@@ -200,169 +232,58 @@
 <!-- End method -->
 
 
-<!-- Street-to-Satellite -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-five-fifths">
-        <h2 class="title is-3">Street-to-Satellite</h2>
-        </div>
-      </div>
+<section class="section hero">
+    <h2 class="title is-3" style="text-align: center;">Ground2Aerial-3 Dataset</h2>
+    <div class="Ground2Aerial-3"
+      style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+      <h1 style="width: 40%; font-size: 20px; line-height: 1.5; text-align: justify">
+        We propose Ground2Aerial-3, a multi-task cross-view synthesis dataset designed to explore the performance of
+        cross-view synthesis methods in several novel scenarios.
+        As shown in Figure 3, G2A-3 contains nearly 10k pairs of street-view and aerial images, covering disaster scene
+        aerial image synthesis, historical high-resolution satellite image synthesis,
+        and low-altitude UAV image synthesis. The dataset of each task is randomly split into training and test sets with a
+        ratio of 5:1.
+        The ground street-view images are 1024×512, with true north aligned at the center, and the aerial images are
+        512×512, aligned with the center of the ground images.
+      </h1>
+      <img src="/static/images/Ground2Aerial-3_Dataset.jpg" style="width: 25%; margin-top: 20px;">
     </div>
-  </div>
+
 </section>
 
-<!-- Image carousel (Comparison with SOTA)-->
-<section class="hero is-small is-light">
-  <div class="hero-body ">
-    <div class="container is-max-desktop">
-      <div class="content has-text-justified">
-      <h3>Comparison with SOTA</h3>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-image1">
-          <img src="./static/images/CVUSA_results.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="150%"
-                id="image1"/>
-                <figcaption style="font-size: 20px;text-align: center;"><b>CVUSA</b></figcaption>
-        </div>
-        <div class="item item-image2">
-          <img src="./static/images/CVACT_results.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="150%"
-                id="image2"/>
-                <figcaption style="font-size: 20px;text-align: center;"><b>CVACT</b></figcaption>
-        </div>
-        <div class="item item-image3">
-          <img src="./static/images/VIGOR_results.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="150%"
-                id="image3"/>
-                <figcaption style="font-size: 20px;text-align: center;"><b>VIGOR-Chicago</b></figcaption>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-<!-- End Image carousel (Comparison with SOTA)-->
-
-<!-- Image carousel (Ablation Study)-->
-<section class="hero is-small is-light">
-  <div class="hero-body ">
-    <div class="container is-max-desktop">
-      <div class="content has-text-justified">
-      <h3>Ablation Study</h3>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-image1">
-          <img src="./static/images/Curved-BEV.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="150%"
-                id="image1"/>
-                <figcaption style="font-size: 20px;text-align: center;"><b>Curved-BEV controlled synthesis</b></figcaption>
-        </div>
-        <div class="item item-image2">
-          <img src="./static/images/Light.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="150%"
-                id="image2"/>
-                <figcaption style="font-size: 20px;text-align: center;"><b>Light manipulation</b></figcaption>
-        </div>
-        <div class="item item-image3">
-          <img src="./static/images/CrossRegion.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="150%"
-                id="image3"/>
-                <figcaption style="font-size: 20px;text-align: center;"><b>Synthesis results for cross-dataset generalization</b></figcaption>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-<!-- End Image carousel (Ablation Study)-->
-<!-- End Street-to-Satellite -->
 
 <!-- Evaluation -->
-<section class="section">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
         <h2 class="title is-3">Evaluation</h2>
         <div class="content has-text-justified">
           <!-- index evaluation-->
-          <h3>Quantitative Evaluation</h3>
+          <h3>Quantitative Evaluation of Existing datasets</h3>
           <p style="font-size: 20px;">
-            On the suburban CVUSA and CVACT datasets, our SkyDiffusion method achieved the outstanding 
-            results. Compared to state-of-the-art methods, it reduced FID by <b>25.83%</b> and increased SSIM 
-            by <b>13.89%</b>, demonstrating its superiority in synthesizing realistic and consistent satellite 
-            images. In the urban VIGOR-Chicago dataset, SkyDiffusion reduced FID by <b>9.96%</b> and improved 
-            SSIM by <b>14.11%</b> compared to the state-of-the-art method
+            On the suburban CVUSA and CVACT datasets, our SkyDiffusion method achieved the outstanding results. Compared to
+            state-of-the-art methods, it reduced FID by <b>25.72%</b> and increased SSIM by <b>7.68%</b>, demonstrating its superiority in
+            synthesizing realistic and consistent satellite images. In the urban VIGOR-Chicago dataset, SkyDiffusion reduced FID by
+            <b>14.9%</b> and improved SSIM by <b>9.41%</b> compared to the state-of-the-art method.
           </p>
 
          <div class="column is-centered has-text-centered">
-           <img src="./static/images/QuantitativeCom_3datasets.png"
+           <img src="./static/images/main1.png"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
-                 <figcaption style="font-size: 14px;text-align: center;">Quantitative comparison of different methods on CVUSA, CVACT, and VIGOR-Chicago</figcaption>
          </div>
+
+        <p style="font-size: 20px;">
+          The tasks on the G2A-3 dataset present certain challenges; however, our method achieves
+          significant performance improvements over the commonly used image-conditioned synthesis method, ControlNet. SkyDiffusion
+          reduces the FID by an average of <b>19.60%</b> and increases the SSIM by an average of <b>9.90%</b>.
+        </p>
+        <div class="column is-centered has-text-centered">
+          <img src="./static/images/main2.png" class="interpolation-image" alt="Interpolate start reference image." style="width: 50%;"/>
+        </div>
+
           <!-- End index evaluation-->
-
-          <!-- Ablation study evaluation-->
-          <p style="font-size: 20px;">
-            "Baseline" represents directly using street-view image,"C-BEV" 
-            denotes using Curved-BEV transformation, and "Multi" stands for 
-            Multi-to-One strategy.    
-          </p>
-
-         <div class="column is-centered has-text-centered">
-           <img src="./static/images/CBEV_ablation.png"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."
-                 width="60%"/>
-                 <figcaption style="font-size: 14px;text-align: center;">Ablation study of the Curved-BEV module</figcaption>
-         </div>
-
-          <!-- End Ablation study evaluation-->
-
-          <!-- Light Ablation study evaluation-->
-          <p style="font-size: 20px;">
-            The ablation experiments in the beneath table indicate that the Light Manipulation module aligns the 
-            lighting conditions of the synthesized images with those of the target domain images, improving SSIM and PSNR metrics.   
-          </p>
-
-         <div class="column is-centered has-text-centered">
-           <img src="./static/images/Light_Ablation.png"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."
-                 width="60%"/>
-                 <figcaption style="font-size: 14px;text-align: center;">Ablation study of the light manipulation module</figcaption>
-         </div>
-
-          <!-- End Light Ablation study evaluation-->
-          <!-- Light Ablation study evaluation-->
-          <p style="font-size: 20px;">
-            We trained the model on CVACT and tested it on the VIGOR-Chicago, and vice versa, to evaluate cross-dataset 
-            generation capability. Compared to Instruct pix2pix, our method (w/o light) demonstrates superior performance 
-            across metrics. Our method effectively preserves scene content such as road directions and intersections.
-          </p>
-
-          <div class="column is-centered has-text-centered">
-          <img src="./static/images/CrossRegion_Ablation.png"
-                class="interpolation-image"
-                alt="Interpolate start reference image."
-                width="60%"/>
-                <figcaption style="font-size: 14px;text-align: center;">Cross-dataset generalization assessment</figcaption>
-          </div>
-
-          <!-- End Light Ablation study evaluation-->
-
 
         </div>
       </div>
@@ -373,24 +294,6 @@
 
 <!-- End evaluation -->
 
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{ye2024skydiffusionstreettosatelliteimagesynthesis,
-        title={SkyDiffusion: Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm}, 
-        author={Junyan Ye and Jun He and Weijia Li and Zhutao Lv and Jinhua Yu and Haote Yang and Conghui He},
-        year={2024},
-        eprint={2408.01812},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2408.01812}, 
-  }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
 
 
   <footer class="footer">
@@ -416,6 +319,184 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+<script>
+  const videos = ['/static/videos/1.mp4', '/static/videos/2.mp4'];
+  let currentVideoIndex = 0;
 
-  </body>
+  const videoElement = document.getElementById('background-video');
+  const prevButton = document.getElementById('prev-video');
+  const nextButton = document.getElementById('next-video');
+  const videoThumbnails = document.querySelectorAll('.thumbnail-item');
+
+  function updateVideoAndThumbnails() {
+    // 更新背景视频
+    videoElement.src = videos[currentVideoIndex];
+    videoElement.play();
+
+    // 更新缩略图
+    videoThumbnails.forEach((thumbnail, index) => {
+      if (index === currentVideoIndex) {
+        thumbnail.classList.add('active');
+        thumbnail.classList.remove('inactive');
+      } else {
+        thumbnail.classList.remove('active');
+        thumbnail.classList.add('inactive');
+      }
+    });
+  }
+
+  // 点击缩略图切换视频
+  videoThumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', () => {
+      currentVideoIndex = index;
+      updateVideoAndThumbnails();
+    });
+  });
+
+  // 切换到上一视频
+  prevButton.addEventListener('click', () => {
+    currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+    updateVideoAndThumbnails();
+  });
+
+  // 切换到下一视频
+  nextButton.addEventListener('click', () => {
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+    updateVideoAndThumbnails();
+  });
+
+  // 初始化
+  updateVideoAndThumbnails();
+
+
+</script>
+
+<script>
+  // PDF.js 配置
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+  // PDF 数据集（每个 tab 的 PDF 列表）
+  const datasetPDFs = {
+    CVACT: ['/static/datasets/CVACT1.pdf', '/static/datasets/CVACT2.pdf', '/static/datasets/CVACT3.pdf'],
+    CVUSA: ['/static/datasets/CVUSA1.pdf', '/static/datasets/CVUSA2.pdf', '/static/datasets/CVUSA3.pdf'],
+    Vigor: ['/static/datasets/vigor1.pdf', '/static/datasets/vigor2.pdf', '/static/datasets/vigor3.pdf'],
+  };
+
+  let currentImageIndex = 0;
+
+  // 异步加载 PDF 并渲染到 Canvas
+  function loadPDFAsync(src) {
+    const canvas = document.getElementById('pdf-canvas');
+    const context = canvas.getContext('2d');
+
+    pdfjsLib.getDocument(src).promise.then(pdf => {
+      // 获取第一页
+      pdf.getPage(1).then(page => {
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+        page.render(renderContext);
+      });
+    });
+  }
+
+  // 更新 PDF 的函数
+  function updatePDF(tab) {
+    const pdfs = datasetPDFs[tab];
+    const pdfSrc = pdfs[currentImageIndex];
+    loadPDFAsync(pdfSrc);
+    updateImageIndicators();
+  }
+
+  // 切换 PDF 的函数
+  function switchPDF(tab, direction) {
+    const pdfs = datasetPDFs[tab];
+    currentImageIndex = (currentImageIndex + direction + pdfs.length) % pdfs.length;
+    updatePDF(tab);
+  }
+
+  // 获取元素
+  const tabs = document.querySelectorAll('.tab-item');
+  const indicator = document.querySelector('.tab-indicator');
+  let activeTab = 0; // 默认选中的标签
+
+  // 更新标签样式和指示器位置
+  function updateTabs() {
+    tabs.forEach((tab, index) => {
+      tab.classList.remove('active');
+      if (index === activeTab) {
+        tab.classList.add('active');
+      }
+    });
+
+    // 更新指示器位置
+    const activeTabElement = tabs[activeTab];
+    const tabWidth = activeTabElement.offsetWidth;
+    const tabPosition = activeTabElement.offsetLeft;
+    const tabHeight = activeTabElement.offsetHeight;
+    indicator.style.width = `${tabWidth}px`;
+    indicator.style.left = `${tabPosition}px`;
+    indicator.style.height = `${tabHeight}px`;
+  }
+
+  // 为每个标签添加点击事件
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      activeTab = index;
+      currentImageIndex = 0; // 切换标签时重置图片索引
+      updateTabs();
+      const activeTabName = tab.textContent;
+      createImageIndicators(datasetPDFs[activeTabName].length); // 创建白点
+      setTimeout(() => {
+        updatePDF(activeTabName);
+      }, 200);
+    });
+  });
+
+  // 导航按钮事件
+  document.getElementById('prev-btn').addEventListener('click', () => {
+    const activeTabName = tabs[activeTab].textContent;
+    switchPDF(activeTabName, -1);
+  });
+
+  document.getElementById('next-btn').addEventListener('click', () => {
+    const activeTabName = tabs[activeTab].textContent;
+    switchPDF(activeTabName, 1);
+  });
+
+  // 创建图片指示器点
+  function createImageIndicators(count) {
+    const indicatorContainer = document.getElementById('img-indicator');
+    indicatorContainer.innerHTML = ''; // 清空指示器容器
+
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('indicator-dot');
+      if (i === currentImageIndex) dot.classList.add('active'); // 当前图片的白点高亮
+      indicatorContainer.appendChild(dot);
+    }
+  }
+
+  // 更新指示器点样式
+  function updateImageIndicators() {
+    const dots = document.querySelectorAll('.indicator-dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentImageIndex); // 高亮当前图片的白点
+    });
+  }
+
+  // 初始化更新
+  updateTabs();
+  createImageIndicators(datasetPDFs['CVACT'].length);
+  updatePDF('CVACT');
+
+</script>
+
+</body>
+
+
   </html>
