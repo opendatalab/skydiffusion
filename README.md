@@ -1,29 +1,28 @@
 <div align="center">
-	<img src="./static/images/SkyDiffusion_md.png" alt="" height=75>
-	<h1>Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm</h1>
-	<a href="https://arxiv.org/abs/2408.01812"><img src='https://img.shields.io/badge/arXiv-2408.01812-red?logo=arXiv' alt='arXiv'></a>
-	<a href="https://opendatalab.github.io/skydiffusion/"><img src='https://img.shields.io/badge/Project-SkyDiffusion-green' alt='Project'></a>
+	<img src="./img/skydiffusion_icon.png" alt="" height=75>
+	<h1>Ground-to-Aerial Image Synthesis with Diffusion Models and BEV Paradigm</h1>
+	<a href="https://skydiffusion.github.io/"><img src='https://img.shields.io/badge/Project-SkyDiffusion-green' alt='Project'></a>
 	<a href=""><img src='https://img.shields.io/badge/python-3.9-blue.svg' alt='Python'></a>
 	<a href=""><img src='https://img.shields.io/badge/License-Apache%202.0-yellow' alt='Python'></a>
 </div>
 
 
-<img src="./img/fig2_overview_2.jpg" alt="">
+<img src="./img/pipeline.jpg" alt="">
 
 ## Abstract
-Street-to-satellite image synthesis focuses on generating realistic satellite images from corresponding ground street-view images while maintaining a consistent content layout, similar to looking down from the sky. The significant differences in perspectives create a substantial domain gap between the views, making this cross-view generation task particularly challenging. In this paper, we introduce SkyDiffusion, a novel cross-view generation method for synthesizing satellite images from street-view images, leveraging diffusion models and Bird's Eye View (BEV) paradigm. First, we design a Curved-BEV method to transform street-view images to the satellite view, reformulating the challenging cross-domain image synthesis task into a conditional generation problem. Curved-BEV also includes a "Multi-to-One" mapping strategy for combining multiple street-view images within the same satellite coverage area, effectively solving the occlusion issues in dense urban scenes. Next, we design a BEV-controlled diffusion model to generate satellite images consistent with the street-view content, which also incorporates a light manipulation module to optimize the lighting condition of the synthesized image using a reference satellite. Experimental results demonstrate that SkyDiffusion outperforms state-of-the-art methods on both suburban (CVUSA & CVACT) and urban (VIGOR-Chicago) cross-view datasets, with an average SSIM increase of 14.5% and a FID reduction of 29.6%, achieving realistic and content-consistent satellite image generation.
+Ground-to-aerial image synthesis focuses on generating realistic aerial images from corresponding ground street view images while maintaining consistent content layout, simulating a top-down view. The significant viewpoint difference leads to domain gaps between views, and dense urban scenes limit the visible range of street views, making this cross-view generation task particularly challenging. In this paper, we introduce SkyDiffusion, a novel cross-view generation method for synthesizing aerial images from street view images, utilizing a diffusion model and the Bird’s-Eye View (BEV) paradigm. The Curved-BEV method in SkyDiffusion converts street-view images into a BEV perspective, effectively bridging the domain gap, and employs a "multi-to-one" mapping strategy to address occlusion issues in dense urban scenes. Next, SkyDiffusion designed a BEV-guided diffusion model to generate content-consistent and realistic aerial images. Additionally, we introduce a novel dataset, Ground2Aerial-3, designed for diverse ground-to-aerial image synthesis applications, including disaster scene aerial synthesis, historical high-resolution satellite image synthesis, and low-altitude UAV image synthesis tasks. Experimental results demonstrate that SkyDiffusion outperforms state-of-the-art methods on cross-view datasets across natural (CVUSA), suburban (CVACT), urban (VIGOR-Chicago), and various application scenarios (G2A-3), achieving realistic and content-consistent aerial image generation. 
 
 
 ## Installation
 Clone this repo to a local folder:
 ```bash
-git clone https://github.com/opendatalab/skydiffusion
-cd skydiffusion
+git clone https://github.com/SkyDiffusion/SkyDiffusion-code.git
+cd SkyDiffusion-code
 ```
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
 
 
 ## Requirements
@@ -37,40 +36,29 @@ conda env update --name skydiffusion --file environment.yaml
 ## Data Preparation
 The publicly available datasets used in this paper can be obtained from the following sources: 
 
-**Preparing CVUSA Dataset.**  The dataset can be downloaded [here](https://mvrl.cse.wustl.edu/datasets/cvusa). After unzipping the dataset, prepare the training and testing data as discussed in [our paper](https://www.arxiv.org/abs/2408.01812),  We have also prepared categorized dataset documentation in the datasets folder.
+**Preparing G2A-3 Dataset.**  The dataset can be downloaded [here](https://huggingface.co/datasets/SkyDiff1109/G2A-3). 
 
-**Preparing CVACT Dataset.**  The dataset can be downloaded [here](https://github.com/Liumouliu/OriCNN). After unzipping the dataset, prepare the training and testing data as discussed in [our paper](https://www.arxiv.org/abs/2408.01812),  We have also prepared categorized dataset documentation in the datasets folder.
+**Preparing CVUSA Dataset.**  The dataset can be downloaded [here](https://mvrl.cse.wustl.edu/datasets/cvusa). 
+
+**Preparing CVACT Dataset.**  The dataset can be downloaded [here](https://github.com/Liumouliu/OriCNN). 
+
+**Preparing VIGOR Dataset.**  The dataset can be downloaded [here](https://github.com/Jeff-Zilence/VIGOR/tree/main). 
+
+After unzipping the datasets, prepare the training and testing data as discussed in our paper.
 
 
 
-## Generating Satellite Images Using Our Pre-trained Model
- 1. You can download a pre-trained model (e.g. cvusa) with the following script:
-```bash
-bash ./scripts/download_skydiffusion_model.sh cvusa
-```
- 2. Use the provided pre-trained model to generate satellite images according to the following code:
+## Generating Aerial Images Using Our Pre-trained Model
+ 1. You can download a pre-trained model (e.g. cvact) from [huggingface](https://huggingface.co/SkyDiff1109/SkyDiffusion_ckpt/tree/main) and place it in ckpt folder.
+ 2. Use the provided pre-trained model to generate aerial images according to the following code:
 ```bash
 python test.py \
-    --num_gpus=4 \
+    --num_gpus=8 \
     --config_path=./models/lacldm_v15.yaml \
     --image_width=512 --image_height=512 \
     --result_dir= [Output folder] \
-    --model_path=./ckpt/CVUSA/Skydiffusion_CVUSA.ckpt \
-    --data_file_path=./datasets/CVUSA_test.csv \
+    --model_path=./ckpt/CVACT_SkyDiffusion.ckpt \
+    --data_file_path=./examples/examples.csv \
+    --dataset_name=CVACT
 ```
 
-## Train Your Own Models
-You can also train your own models with the following commands:
- 1. Prepare your datasets
- 2. Run the following scripts
-```bash
-python omnicity_train.py \
-    --sd_locked=False --accumulate_grad_batches=8 \
-    --num_gpus=8 \
-    --max_epochs=100 \
-    --config_path=./models/lacldm_v15.yaml \
-    --model_path=./models/lacontrol_sd15_ini.ckpt \
-    --learning_rate=1e-5 --batch_size=8 --image_width=512 --image_height=512 \
-    --train_data_file=./dataset/CVUSA_train.csv \
-    --valid_data_file=./datasets/CVUSA_test.csv
-```

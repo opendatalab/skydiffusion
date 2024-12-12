@@ -1,0 +1,3 @@
+2-6Pro9zN1qOxbFSTigfAg_grdView	./examples/streetview/2-6Pro9zN1qOxbFSTigfAg_grdView.jpg	./examples/gt/2-6Pro9zN1qOxbFSTigfAg_satView_polish.jpg
+cSsY4Js1I4eYNdAgcmKxzg_grdView	./examples/streetview/cSsY4Js1I4eYNdAgcmKxzg_grdView.jpg	./examples/gt/cSsY4Js1I4eYNdAgcmKxzg_satView_polish.jpg
+EFcX7D8xMiXIrWwznx225Q_grdView	./examples/streetview/EFcX7D8xMiXIrWwznx225Q_grdView.jpg	./examples/gt/EFcX7D8xMiXIrWwznx225Q_satView_polish.jpg
