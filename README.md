@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="./img/skydiffusion_icon.png" alt="" height=75>
 	<h1>Ground-to-Aerial Image Synthesis with Diffusion Models and BEV Paradigm</h1>
-	<a href="https://skydiffusion.github.io/"><img src='https://img.shields.io/badge/Project-SkyDiffusion-green' alt='Project'></a>
+	<a href="https://opendatalab.github.io/skydiffusion/"><img src='https://img.shields.io/badge/Project-SkyDiffusion-green' alt='Project'></a>
 	<a href=""><img src='https://img.shields.io/badge/python-3.9-blue.svg' alt='Python'></a>
 	<a href=""><img src='https://img.shields.io/badge/License-Apache%202.0-yellow' alt='Python'></a>
 </div>
