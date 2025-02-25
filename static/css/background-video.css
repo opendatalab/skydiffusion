@@ -34,14 +34,14 @@
 
 .video-caption-rightbottom {
     position: absolute;
-    bottom: 13%;
+    bottom: 12%;
     /* right: 2%; */
     left: 2%;
     color: white;
     /* background-color: rgba(0, 0, 0, 0.5); */
     padding: 10px;
-    font-size: 0.8rem;
-    max-width: 20%;
+    font-size: 1.5rem;
+    max-width: 22%;
     line-height: 1.4;
     text-align: justify;
 }
@@ -49,9 +49,9 @@
 .video-caption-middle {
     position: absolute;
     left: 82%;
-    transform: translateX(-50%);
-    width: 31%;
-    margin-top: -8%;
+    transform: translateX(-52%);
+    width: 33%;
+    margin-top: -22%;
 }
 
 .video-middle-h2 {
@@ -73,7 +73,7 @@
     float: left;
     margin-right: -10px;
     margin-left: 20px;
-    width: 12%;
+    width: 16%;
     opacity: 1;
     position: relative;
     z-index: -1;
@@ -84,13 +84,13 @@
     line-height: 1.5;
     text-align: right;
     color: white;
-    font-size: 24px;
+    font-size: 40px;
 }
 
 .video-middle-text span {
     font-weight: bold;
     color: #29ffff;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 .huggingface-span {
@@ -469,19 +469,23 @@ tsVideos {
     background-color: #555;
   }
 
+  span.video-title {
+    font-size: 1.8em;
+}
+
 @media (max-width: 2560px) {
     .video-caption-middle {
         left: 82%;
-        transform: translateX(-50%);
-        width: 31%;
-        margin-top: -12%;
+        transform: translateX(-53%);
+        width: 33%;
+        margin-top: -19%;
     }
     .video-middle-text {
         font-size: 22px;
     }
     
     .video-middle-text span {
-        font-size: 24px;
+        font-size: 32px;
     }
     .video-middle-icon {
         width: 12%;
@@ -490,5 +494,8 @@ tsVideos {
         bottom: 14%;
         left: 2%;
         font-size: 1rem;
+    }
+    span.video-title {
+        font-size: 2.1em;
     }
 }
