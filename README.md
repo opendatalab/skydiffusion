@@ -13,7 +13,7 @@
 
 <div align="center">
 	
-[Junyan Ye](https://yejy53.github.io/), [Jun He](https://lhl3341.github.io/), [Weijia Li](https://liweijia.github.io/), Zhutao Lv, Yi Lin, Jinhua Yu, Haote Yang,  [Conghui He](https://conghui.github.io/) 
+[Junyan Ye](https://yejy53.github.io/), Jun He, [Weijia Li](https://liweijia.github.io/), Zhutao Lv, Yi Lin, Jinhua Yu, Haote Yang,  [Conghui He](https://conghui.github.io/) 
 
 Sun Yat-Sen University, Shanghai AI Laboratory, Sensetime Research
 
