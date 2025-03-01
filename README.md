@@ -1,31 +1,52 @@
+
+
 <div align="center">
 	<img src="./img/skydiffusion_icon.png" alt="" height=75>
-	<h1>Ground-to-Aerial Image Synthesis with Diffusion Models and BEV Paradigm</h1>
+	<h1>Ground-to-Aerial Image Synthesis with  Diffusion Models and BEV Paradigm</h1>
+	<a href="https://arxiv.org/abs/2408.01812"><img src='https://img.shields.io/badge/Arxiv-2410.02761-b31b1b.svg?logo=arXiv' alt='arXiv'></a>
 	<a href="https://opendatalab.github.io/skydiffusion/"><img src='https://img.shields.io/badge/Project-SkyDiffusion-green' alt='Project'></a>
+	<a href="https://huggingface.co/datasets/Yejy53/G2A-3"><img src='https://img.shields.io/badge/🤗-Huggingface%20Checkpoint-blue.svg' alt='Dataset'></a>
 	<a href=""><img src='https://img.shields.io/badge/python-3.9-blue.svg' alt='Python'></a>
 	<a href=""><img src='https://img.shields.io/badge/License-Apache%202.0-yellow' alt='Python'></a>
 </div>
 
 
+<div align="center">
+	
+[Junyan Ye](https://yejy53.github.io/), [Jun He](https://lhl3341.github.io/), [Weijia Li](https://liweijia.github.io/), Zhutao Lv, Yi Lin, Jinhua Yu, Haote Yang,  [Conghui He](https://conghui.github.io/) 
+
+Sun Yat-Sen University, Shanghai AI Laboratory, Sensetime Research
+
+</div>
+
 <img src="./img/pipeline.jpg" alt="">
 
-## Abstract
-Ground-to-aerial image synthesis focuses on generating realistic aerial images from corresponding ground street view images while maintaining consistent content layout, simulating a top-down view. The significant viewpoint difference leads to domain gaps between views, and dense urban scenes limit the visible range of street views, making this cross-view generation task particularly challenging. In this paper, we introduce SkyDiffusion, a novel cross-view generation method for synthesizing aerial images from street view images, utilizing a diffusion model and the Bird’s-Eye View (BEV) paradigm. The Curved-BEV method in SkyDiffusion converts street-view images into a BEV perspective, effectively bridging the domain gap, and employs a "multi-to-one" mapping strategy to address occlusion issues in dense urban scenes. Next, SkyDiffusion designed a BEV-guided diffusion model to generate content-consistent and realistic aerial images. Additionally, we introduce a novel dataset, Ground2Aerial-3, designed for diverse ground-to-aerial image synthesis applications, including disaster scene aerial synthesis, historical high-resolution satellite image synthesis, and low-altitude UAV image synthesis tasks. Experimental results demonstrate that SkyDiffusion outperforms state-of-the-art methods on cross-view datasets across natural (CVUSA), suburban (CVACT), urban (VIGOR-Chicago), and various application scenarios (G2A-3), achieving realistic and content-consistent aerial image generation. 
+## 📰 News
+
+* **[2024.11]**  ⚡ We released the Dataset G2A-3.  Check out the [Dataset](https://arxiv.org/abs/2408.01812).
+  
+* **[2024.11]**  😄 We released the training and testing code
+  
+* **[2024.08]**  🔥 We have released **Skydifussion: Ground-to-Aerial Image Synthesis with  Diffusion Models and BEV Paradigm**. Check out the [paper](https://huggingface.co/datasets/Yejy53/G2A-3/tree/main). The code and dataset are coming soon
 
 
-## Installation
+## 🏆 Contributions
+
+**Main methods：** We introduce SkyDiffusion, a novel ground-to-aerial synthesis method leveraging diffusion models and BEV paradigm to generate realistic, consistent aerial images.
+
+**Method innovation details：** We design a Curved-BEV method to transform street-view images into satellite views for domain alignment. It also includes "Multi-to-One" mapping strategy to enhance BEV perception range in densely occluded urban areas.
+
+**Dataset Contribution：** We introduce Ground2Aerial-3, a new ground-to-aerial image synthesis dataset, featuring disaster scene aerial image, historical high-resolution satellite image, and low-altitude UAV image
+
+**Experimental results：** We introduce Ground2Aerial-3, a new ground-to-aerial image synthesis dataset, featuring disaster scene aerial image, historical high-resolution satellite image, and low-altitude UAV image
+
+## 🛠️ Requirements and Installation
 Clone this repo to a local folder:
 ```bash
 git clone https://github.com/SkyDiffusion/SkyDiffusion-code.git
 cd SkyDiffusion-code
 ```
 
-## License
-
-This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
-
-
-## Requirements
 We provide an available conda environment named skydiffusion. You can configure the necessary Python environment for the experiments by following these steps:
 ```bash
 conda create --name skydiffusion python=3.9
@@ -33,7 +54,7 @@ conda activate skydiffusion
 conda env update --name skydiffusion --file environment.yaml
 ```
 
-## Data Preparation
+## 🤗 Data Preparation
 The publicly available datasets used in this paper can be obtained from the following sources: 
 
 **Preparing G2A-3 Dataset.**  The dataset can be downloaded [here](https://huggingface.co/datasets/Yejy53/G2A-3/tree/main). 
@@ -48,8 +69,8 @@ After unzipping the datasets, prepare the training and testing data as discussed
 
 
 
-## Generating Aerial Images Using Our Pre-trained Model
-Use the provided pre-trained model to generate aerial images according to the following code:
+## 🚀 Quick Start
+Generating Aerial Images Using Our Pre-trained Model. Use the provided pre-trained model to generate aerial images according to the following code:
 ```bash
 python test.py \
     --num_gpus=8 \
@@ -61,3 +82,17 @@ python test.py \
     --dataset_name=CVACT
 ```
 
+## BibTeX 🙏
+
+If you have any questions, be free to contact with me! 
+```
+@article{ye2024skydiffusion,
+  title={SkyDiffusion: Street-to-Satellite Image Synthesis with Diffusion Models and BEV Paradigm},
+  author={Ye, Junyan and He, Jun and Li, Weijia and Lv, Zhutao and Yu, Jinhua and Yang, Haote and He, Conghui},
+  journal={arXiv preprint arXiv:2408.01812},
+  year={2024}
+}
+
+## License
+
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
