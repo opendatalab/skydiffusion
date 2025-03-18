@@ -65,7 +65,7 @@
         style="vertical-align: middle; margin-right: 0px; position: relative; top: -8px">
       <span class="highlight">SkyDiffusion</span>
     </h1>
-    <h1 class="title publication-title" id="title-full">Ground-to-Aerial Image Synthesis <br> with Diffusion Models <br> and BEV Paradigm</h1>
+    <h1 class="title publication-title" id="title-full">Leveraging BEV Paradigm for  <br> Ground-to-Aerial Image Synthesis</h1>
     <br>
     <!-- <div class="is-size-5 publication-authors special-authors">
         <span class="author-block">
@@ -356,7 +356,7 @@
           "
         >
           <img
-            src="./static/images/Ground2Aerial-3_Dataset.jpg"
+            src="./static/images/G2A-3.jpg"
             style="height: 25vh; object-fit: contain"
           />
           <img
@@ -458,7 +458,7 @@
         />Method
       </h2>
       <img
-        src="./static/images/Method.jpg"
+        src="./static/images/fig2_pipeline.jpg"
         alt="Interpolate start reference image."
         style="width: 40vw; object-fit: contain"
       />
@@ -473,7 +473,7 @@
         <span style="font-weight: bold"
           >Overview of the proposed SkyDiffusion framework</span
         >, including the curved BEV transformation and BEV-controlled diffusion
-        model with light manipulation. The lower parts present the results of
+        model. The lower parts present the results of
         One-to-One and Multi-to-One BEV transformations, respectively.
       </figcaption>
     </section>
@@ -562,8 +562,8 @@
         The tasks on the G2A-3 dataset present certain challenges; however, our
         method achieves significant performance improvements over the commonly
         used image-conditioned synthesis method, ControlNet. SkyDiffusion
-        reduces the FID by an average of <b>19.60%</b> and increases the SSIM by
-        an average of <b>9.90%</b>.
+        reduces the FID by an average of <b> 25.81%</b> and increases the SSIM by
+        an average of <b>12.88%</b>.
       </h1>
       <div
         style="
@@ -575,11 +575,6 @@
       >
         <img
           src="./static/images/main2.png"
-          alt="Interpolate start reference image."
-          style="width: 19vw; height: auto"
-        />
-        <img
-          src="./static/images/main1_2.png"
           alt="Interpolate start reference image."
           style="width: 19vw; height: auto"
         />
@@ -605,22 +600,6 @@
           demonstrating its effectiveness in dense urban scenes.
         </h1>
 
-        <h1
-          style="
-            width: 40vw;
-            font-size: 20px;
-            line-height: 1.5;
-            text-align: justify;
-            margin-bottom: 30px;
-          "
-        >
-          We applied an optional Light Manipulation module to align the lighting
-          conditions of the synthesized image with those of the target domain
-          image. The results indicate that Light Manipulation can effectively
-          improve SSIM and PSNR metrics. This module preserves the original
-          image content while providing more flexible lighting conditions for
-          the synthesized satellite image.
-        </h1>
       </div>
     </section>
 
