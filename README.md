@@ -23,6 +23,8 @@ Sun Yat-Sen University, Shanghai AI Laboratory, Sensetime Research
 
 ## 📰 News
 
+* **[2025.06]**  🔥 We are very happy to announce that SKydiffusion has been accepted by ICCV 2025！
+
 * **[2024.11]**  ⚡ We released the Dataset G2A-3.  Check out the [Dataset](https://arxiv.org/abs/2408.01812).
   
 * **[2024.11]**  😄 We released the training and testing code
